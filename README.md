@@ -15,7 +15,7 @@ designed to detect attacks in IoT-integrated networks.
 - Nmap SYN port scanning
 - ICMP/TCP DoS flooding
 - FTP brute force
-- SSH brute force
+
 
 ## Files
 - `monitor.py` — Python central monitoring dashboard
