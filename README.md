@@ -28,3 +28,28 @@ designed to detect attacks in IoT-integrated networks.
 2. Run `start_monitor.bat`
 3. Launch attacks from Kali
 4. Watch dashboard for live alerts
+
+
+## TESTBED SETUP
+
+## Virtual Machine Setup
+
+### Requirements
+- VMware Workstation Player (free)
+- 16GB RAM recommended
+
+### VMs Required
+| VM | Purpose | Download |
+|---|---|---|
+| Kali Linux | Attacker | [kali.org](https://kali.org/get-kali) |
+| Metasploitable2 | IoT Victim | [sourceforge.net](https://sourceforge.net/projects/metasploitable/) |
+
+### Network Configuration
+- Set both VMs to Host-only VMnet1
+- Kali: 192.168.243.10
+- Metasploitable2: 192.168.243.20
+
+### Attack Tools (run on Kali)
+- nmap -sS 192.168.243.20
+- sudo hping3 --icmp --flood 192.168.243.20
+- hydra -l msfadmin -P rockyou.txt ftp://192.168.243.20
